@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<input type="file" id="f" onchange="myFunction(this)">
+
+<script>
+function myFunction(e) {
+  var file = e.files.item(0);
+  var userpic64;
+  const base64 = new FileReader();
+    base64.onload = () => {
+      userpic64 = base64.result;
+	  console.log(userpic64);
+    }
+  base64.readAsDataURL(file);
+}
+</script>
+
+</body>
+</html>
